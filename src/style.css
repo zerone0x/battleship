@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    padding: 0;
+    margin: 0;
+}
+.playerCell,.computerCell{
+    width: 50px;
+    height: 50px;
+    background: #f2f2f2;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+#gameBoard{
+    display: flex;
+    gap:20px;
+}
+
+#result {
+    font-size: 50px;
+    background-color: aqua;
+}
