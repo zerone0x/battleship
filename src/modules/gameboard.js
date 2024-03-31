@@ -1,19 +1,14 @@
 const Ship = require('./ship.js')
 class Gameboard {
     constructor(ships=[]){
-        // TODO 
         this.board =new Array(10).fill(null).map(()=>new Array(10).fill([null, 'empty']))
         this.ships = ships
-        console.log("Initial ships state:", this.ships); // 这里应该显示所有船只的 hitTimes 为 0
     }
 
     placeship(shiplen) {
         let x = Math.floor(Math.random() * 10)
         let y = Math.floor(Math.random() * 10)
         let direction = Math.random() > 0.5 ? 'x' : 'y'
-        // console.log("New ship state:", newship); // 这里应该显示新船只的 hitTimes 为 0
-        // console.log("Initial ships state:", this.ships); // 这里应该显示所有船只的 hitTimes 为 0
-        // TODO 
         if (this.checkposition(direction,x, y,shiplen)){
             const newship = new Ship(shiplen);
             this.ships.push(newship);

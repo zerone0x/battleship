@@ -26,7 +26,6 @@ Second.addEventListener('click', ()=>{
 )
 
 
-// First.addEventListener('click', )
 
 // ========================================
 const robot = new Player('robot')
@@ -47,8 +46,6 @@ function initGrid(){
 }
 function initGame(){
     initGrid()
-    // start from robot 
-    
     generateShip(robot)
     generateShip(human)
     
@@ -66,7 +63,10 @@ function robotattack(){
 }
 
 function humanattack(x,y){
+    if(robot.gameboard.board[x][y][1] != 'X' && robot.gameboard.board[x][y][1] != 'O')
+    {
     attack(robot, x, y)
+}
     if (gameOver(human,robot)){
         return
     }
@@ -123,15 +123,10 @@ function attack(player, x, y){
     }else if (player.gameboard.board[x][y][1] == 'O'){
         selectgrid.innerHTML='😅'}
     
-    
-    console.log('jkfsdjakfjdksjfk')
     if (res == 'sink' || res == 'hit'){
-        // console.log('hit')
         
         return 'hit'
     }else{
-        // result.innerHTML = res
-        // console.log('miss')
         return 'miss'
     }
 }
